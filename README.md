@@ -1,14 +1,23 @@
-# Nature Froggy Chat — engine
+# Nature Froggy Chat — engine + colorway CSS
 
-The chat engine used by the Nature Froggy Chat widget family
-(StreamElements / OBS browser source overlays).
+The chat engine and stylesheets used by the Nature Froggy Chat widget
+family (StreamElements / OBS browser source overlays).
 
-`engine.js` is a built artifact — production code, not source. It's
-generated from an internal, actively-maintained source tree; this file is
-what's distributed publicly.
+- `engine.js` — the shared chat engine (obfuscated build)
+- `css/*.css` — the four colorway skins: Deep Forest, Mitsuri Bloom,
+  Starlight, Flat Green (comments stripped)
 
-No build steps, no dependencies. Drop it in a `<script>` tag alongside the
-widget's CSS and HTML.
+These are built artifacts — production code, not source. They're
+generated from an internal, actively-maintained source tree; these files
+are what's distributed publicly.
+
+`css/*.css` still contain `{tokenName}` placeholders (font choices,
+role colors, and similar) — that's StreamElements' own field-substitution
+syntax, resolved by the platform when the widget is configured. It's
+expected, not a bug.
+
+No build steps, no dependencies. Drop `engine.js` and the matching
+colorway's CSS in alongside the widget's HTML.
 
 ## License
 
